@@ -1,1 +1,0 @@
-# tugberkdnc.github.io
