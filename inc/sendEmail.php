@@ -1,7 +1,7 @@
 ﻿<?php
 
-// Replace this with your own email address
-$siteOwnersEmail = 'user@website.com';
+
+$siteOwnersEmail = 'tugberk.dnc@gmail.com';
 
 
 if($_POST) {
@@ -13,15 +13,15 @@ if($_POST) {
 
    // Check Name
 	if (strlen($name) < 2) {
-		$error['name'] = "Please enter your name.";
+		$error['name'] = "Lütfen isminizi yazın.";
 	}
 	// Check Email
 	if (!preg_match('/^[a-z0-9&\'\.\-_\+]+@[a-z0-9\-]+\.([a-z0-9\-]+\.)*+[a-z]{2}/is', $email)) {
-		$error['email'] = "Please enter a valid email address.";
+		$error['email'] = "Lütfen geçerli bir mail adresi yazın.";
 	}
 	// Check Message
 	if (strlen($contact_message) < 15) {
-		$error['message'] = "Please enter your message. It should have at least 15 characters.";
+		$error['message'] = "Lütfen mesajınızı yazın. 15 karakterden uzun olmasına dikkat edin.";
 	}
    // Subject
 	if ($subject == '') { $subject = "Contact Form Submission"; }
@@ -49,9 +49,9 @@ if($_POST) {
       ini_set("sendmail_from", $siteOwnersEmail); // for windows server
       $mail = mail($siteOwnersEmail, $subject, $message, $headers);
 
-		if ($mail) { echo "OK"; }
-      else { echo "Something went wrong. Please try again."; }
-		
+		if ($mail) { echo "Tamam"; }
+      else { echo "Lütfen tekrar deneyin."; }
+
 	} # end if - no validation error
 
 	else {
@@ -59,7 +59,7 @@ if($_POST) {
 		$response = (isset($error['name'])) ? $error['name'] . "<br /> \n" : null;
 		$response .= (isset($error['email'])) ? $error['email'] . "<br /> \n" : null;
 		$response .= (isset($error['message'])) ? $error['message'] . "<br />" : null;
-		
+
 		echo $response;
 
 	} # end if - there was a validation error
