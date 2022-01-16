@@ -1316,12 +1316,12 @@ header .logo a {
 	height: 10rem;
 	width: 10rem;
 	border-radius: 80%;
-	margin: .12rem 0 0 0;
+	margin: .10rem 0 0 0;
 	float: left;
 }
 .intro-info .lead {
 	text-align: left;
-	padding-left: 13rem;
+	padding-left: 10rem;
 }
 
 .about-content {
